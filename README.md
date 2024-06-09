@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-[🎥 LOOM PRESENTATION LINK ](https://www.loom.com/share/13a9e4e819c4464083f98252105cd4aa?sid=73cd2e0c-b42c-431d-bb4b-ee926dffe07b)
+[🎥 LOOM PRESENTATION LINK ](https://www.loom.com/share/0d7b2a452883411d8a252f7c136cfea5?sid=699c61b9-4343-4637-8917-fb76132d87a1)
 
 For this challenge, we are required to code along with the lecturer from this lesson: [VanLife Project Bootstrapping](https://scrimba.com/learn/react/vanlife-project-bootstrapping-co8bc40b191eec875ecf00b23).
 
