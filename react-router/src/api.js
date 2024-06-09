@@ -1,20 +1,39 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection, doc, getDocs, getDoc } from "firebase/firestore/lite"
+import {
+    getFirestore,
+    collection,
+    doc,
+    getDocs,
+    getDoc,
+    query,
+    where,
+    documentId
+} from "firebase/firestore/lite"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD_k3v3HK3tKEqhlqFHPkwogW7PqEqhGhk",
-  authDomain: "vanlife-a1af5.firebaseapp.com",
-  projectId: "vanlife-a1af5",
-  storageBucket: "vanlife-a1af5.appspot.com",
-  messagingSenderId: "803007000356",
-  appId: "1:803007000356:web:446cd3a1ca406839258db1"
+  apiKey: "AIzaSyAsfDyPf_qe-3F_RLw-Zh098ZGFJy6XEYE",
+  authDomain: "vanlife-307e4.firebaseapp.com",
+  projectId: "vanlife-307e4",
+  storageBucket: "vanlife-307e4.appspot.com",
+  messagingSenderId: "102405914579",
+  appId: "1:102405914579:web:fdaac6098b3b2d890ab926"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
 // Refactoring the fetching functions below
 const vansCollectionRef = collection(db, "vans")
+
+export async function getVans() {
+    const snapshot = await getDocs(vansCollectionRef)
+    const vans = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return vans
+}
 
 export async function getHostVans() {
     const q = query(vansCollectionRef, where("hostId", "==", "123"))
